@@ -33,7 +33,22 @@ const twoSum = (nums, target) => {
 };
 
 
-//hash solution
+//hash solution ==> space complexity is linear here 
+const hashSum = function(nums, target) {
+	const map = {};
+	for(var i = 0; i<nums.length; i++) {
+		var complementPair = target - value;
+		if(map[complementPair] != undefined) {
+			return [map[complementPair], i];
+		} else {
+			map[value] = i;
+		}
+	}
+};
+// e.g value =1 complement_pair = 10 - 1 = 9 
+
+
+
 const twoSum = function(nums, target) {
     let hashmap = new Map();
     nums.forEach(function(item, i) {
@@ -45,3 +60,4 @@ const twoSum = function(nums, target) {
         }
     }
 };
+
